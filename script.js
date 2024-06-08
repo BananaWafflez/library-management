@@ -30,8 +30,15 @@ function displayBooks(){
     }
 }
 const library = document.getElementById("library");
+const button = document.getElementById("addbook");
+
+
+
 var book1 = new Book("Harry Potter", "J.K Rowling", 300);
 var book2 = new Book("Learning How to Learn", "Barbara Oakley", 175);
+
+//button.addEventListener("click", displayForm());
+
 addBookToLibrary(book1);
 addBookToLibrary(book2);
 displayBooks();
