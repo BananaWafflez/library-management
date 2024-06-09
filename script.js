@@ -29,15 +29,29 @@ function displayBooks(){
         library.appendChild(bookcard);
     }
 }
+
+function getData(){
+    console.log("test");
+}
+
 const library = document.getElementById("library");
-const button = document.getElementById("addbook");
+let bookform = document.getElementById("bookdata");
+let button = document.getElementById("submit");
+
+bookform.addEventListener("submit", function(e){
+    console.log("event fired");
+    e.preventDefault();
+    $("#bookform").modal('hide');
+   
+});
+
 
 
 
 var book1 = new Book("Harry Potter", "J.K Rowling", 300);
 var book2 = new Book("Learning How to Learn", "Barbara Oakley", 175);
 
-//button.addEventListener("click", displayForm());
+
 
 addBookToLibrary(book1);
 addBookToLibrary(book2);
