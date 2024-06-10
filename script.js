@@ -30,9 +30,16 @@ function displayBooks(){
     }
 }
 
-function getData(){
-    console.log("test");
+
+function resetLibrary(){
+
+    var cards = document.getElementsByClassName("bookcard");
+    for(let i = 0; i < cards.length; i++){
+        cards[i].remove();
+    }
+
 }
+
 
 const library = document.getElementById("library");
 let bookform = document.getElementById("bookdata");
@@ -41,6 +48,15 @@ let button = document.getElementById("submit");
 bookform.addEventListener("submit", function(e){
     console.log("event fired");
     e.preventDefault();
+    const data = new FormData(e.target);
+    console.log(data.get("title"));
+    var newBook = new Book(data.get("title"), data.get("author"), data.get("pages"));
+    addBookToLibrary(newBook);
+    resetLibrary();
+    displayBooks();
+
+    
+
     $("#bookform").modal('hide');
    
 });
