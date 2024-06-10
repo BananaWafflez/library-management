@@ -33,10 +33,10 @@ function displayBooks(){
 
 function resetLibrary(){
 
-    var cards = document.getElementsByClassName("bookcard");
-    for(let i = 0; i < cards.length; i++){
-        cards[i].remove();
-    }
+   const node = document.getElementById("library");
+   while(node.firstChild){
+    node.removeChild(node.lastChild);
+   }
 
 }
 
@@ -72,6 +72,8 @@ var book2 = new Book("Learning How to Learn", "Barbara Oakley", 175);
 addBookToLibrary(book1);
 addBookToLibrary(book2);
 displayBooks();
+
+
 
 
 
